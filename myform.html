@@ -1,0 +1,123 @@
+<html>
+
+<head>
+
+    <title> 05211940000047 - Ening Tri Ayu Alfiyanti </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .label {
+            float: left;
+            width: 120px;
+        }
+        
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        
+        .infobox {
+            width: 200px;
+        }
+        
+        .error {
+            color: red;
+            padding-left: 10px;
+        }
+        
+        .submit {
+            margin-left: 125px;
+            margin-top: 10px;
+        }
+        
+        .container {
+            width: 600px;
+            margin: auto;
+            border: 2px solid rgb(166, 177, 177);
+            padding: 50px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+
+<body style="background-color:thistle">
+    <div class="container">
+        <div class="row ">
+            <div class="col-12 ">
+                <img src="gambar/mataharideptstore.png" alt="logo matahari dept store" width="20%" style="float: right;">
+            </div>
+        </div>
+        <p></p>
+        <p></p>
+        <form id="signup" method="post" action="">
+            <!-- sebagai deklarasi awal untuk membuat menu form-->
+            <p></p>
+            <p></p>
+            <p></p>
+            <h4 style="text-align: center;"><strong> FORM VALIDASI TANGGAL </strong></h4>
+            <!--untuk memberi judul pada form yang dibuat-->
+            <h6 style="text-align: center;"><strong> Matahari Departement Store  </strong></h6>
+            <p style="text-align: center; font-style: italic; font-size: 8px;color: silver;">by. eningtriayu 05211940000047</p>
+            <!--untuk memberi judul pada form yang dibuat-->
+            <hr>
+            <!--perintah horizontal untuk memberikan garis pemisah pada container-->
+            <p></p>
+            <!--untuk memberikan jeda pada halaman container-->
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <div>
+                <label for="dob">Masukkan Tanggal Update Stok :</label>
+                <!--digunakan untuk mendeklarasikan label/judul/perintah yang diberikan untuj infobox-->
+                <input type="text" class="infobox form-control" name="dob" placeholder="hh/bb/tttt" />
+                <!--digunakan untuk mendeklarasikan infobox (tempat pengguna menginput sebuah nilai)-->
+                <span class="error"> Tanggal tidak valid. Gunakan format hh/bb/tttt atau hh-bb-tttt </span>
+                <!--digunakan untuk mendeklarasikan sebuah fungsi error-->
+            </div>
+            <script>
+                $(document).ready(function() {
+                    $('.error').hide(); //menyembunyikan terlebih dahulu class yg bernama error
+                    $('.submit').click(function(event) { //tombol 'submit' diklik
+                        var data = $('.infobox').val(); //membaca text box yang memiliki class name 'infobox'
+                        if (validate_date(data)) { // mengecek jika hasil boolean pada validate_date(date) bernilai 'true'
+                            $('.error').hide(); // jika bernilai 'true' maka class yg bernama 'error' disembunyikan
+                        } else { // mengecek jika hasil boolean pada validate_date(date) bernilai selain 'true' ATAU 'false'
+                            $('.error').show(); // jika bernilai 'true' maka class yg bernama 'error' dimunculkan
+                            event.preventDefault(); //untuk menghentikan tindakan default elemen agar tidak terjadi
+                        }
+                    });
+                });
+
+                function validate_date(date) {
+                    var pattern = new RegExp(/\b\d{1,2}[\/-]\d{1,2}[\/-]\d{4}\b/); //boundary/batasan/aturan yang diberlakukan untuk nilai/variabel yang diinput (Regular Expression yg diteruskan ke konstruktor RegExp)
+                    return pattern.test(date); //nilai boolean dari yang dikembalikan oleh fungsi validate_date () guna menentukan hide() atau show()
+                }
+            </script>
+            <input class="submit btn btn-success" type="submit" value="Submit" style="float: right;">
+            <!--untuk mendeklarasikan class/button submit-->
+        </form>
+</body>
+
+</html>
